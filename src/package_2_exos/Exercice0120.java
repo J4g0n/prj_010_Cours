@@ -10,7 +10,8 @@ public class Exercice0120 {
         System.out.println("Saisir un nombre d'ouvrages");
         int nbOuvrages = sc.nextInt();
 
-        aPayer(montant, nbOuvrages);
+        double montantDu = aPayer(montant, nbOuvrages);
+        System.out.println("Montant du: " + montantDu);
     }
 
     public static double aPayer(double montant, int nbOuvrages) {

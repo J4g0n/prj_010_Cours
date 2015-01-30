@@ -10,28 +10,11 @@ public class Exercice0070 {
     static int [] finalResults;
 
     public static void main(String[] args) {
-        int total = 100; // donné en centimes
-        rendu1euro(total);
-        System.out.println("Nombre total rendus" + nombreDeRendu);
+        int total = 20; // donné en centimes
+        rendu1euro(total, 0);
+        System.out.println("\n\n\nNombre total rendus" + nombreDeRendu);
     }
 
-    public static int [] rendu2centimes() {
-        int [] centTab = { 2 };
-        nombreDeRendu++;
-        return centTab;
-    }
-
-    public static int [] rendu5centimes() {
-        int [] centTab = { 5 };
-        nombreDeRendu++;
-        return centTab;
-    }
-
-    public static int [][] rendu10centimes() {
-        int [][] centTab = {{ 5, 5 }, { 2, 2, 2, 2, 2 }, { 10 }};
-        nombreDeRendu += 3;
-        return centTab;
-    }
 
     /*public static int [][] rendu1euro(int [] renduPrecedent, int total) {
         int i, j;
@@ -68,35 +51,47 @@ public class Exercice0070 {
         return results;
     }*/
 
-    public static void rendu1euro(int total) {
-        if (total == 0) {
-            System.out.println("Fin du rendu.");
-            nombreDeRendu++;
+    public static void rendre2centimes(int total, int step) {
+        System.out.print(step + ". Rendre 2 centimes\t");
+        rendu1euro(total - 2, step + 1);
+    }
+
+    public static void rendre5centimes(int total, int step) {
+        System.out.print(step + ". Rendre 5 centimes\t");
+        rendu1euro(total - 5, step + 1);
+    }
+
+    public static void rendre10centimes(int total, int step) {
+        System.out.print(step + ". Rendre 10 centimes\t");
+        rendu1euro(total - 10, step + 1);
+    }
+
+    public static void rendu1euro(int total, int step) {
+        if (total < 0) {
+            System.out.println("Rendu impossible");
             return ;
         }
-        if (total == 5) {
-            System.out.println("Rendre 5");
-        }
-        if (total == 2) {
-            System.out.println("Rendre 2");
-        }
-        if (total - 2 < 0) {
-            System.out.println("Rendu impossible");
-        }
-        if (total - 5 < 0) {
-            System.out.println("Rendre 2");
-            rendu1euro(total - 2);
-        }
-        if (total - 10 < 0) {
-            System.out.println("Rendre 5");
-            rendu1euro(total - 5);
-        }
-        else {
-            System.out.println("Rendre 10");
-            rendu1euro(10);
-            rendu1euro(total - 10);
-        }
-        System.out.println();
 
+        if (total == 0) {
+            nombreDeRendu++;
+            System.out.print("Rendu valide");
+        }
+
+        if (total >= 10) {
+            spaces(step);
+            rendre10centimes(total, step);
+            spaces(step);
+            rendre5centimes(total, step);
+            spaces(step);
+            rendre2centimes(total, step);
+        }
+    }
+
+    public static void spaces(int spaces) {
+        int i;
+        System.out.print("\n");
+        for (i = 0; i < spaces; i++) {
+            System.out.print("\t");
+        }
     }
 }

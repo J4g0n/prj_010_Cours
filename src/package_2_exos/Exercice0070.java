@@ -3,72 +3,34 @@ package package_2_exos;
 import java.util.List;
 
 public class Exercice0070 {
-    static int centimes2 = 2;
-    static int centimes5 = 5;
-    static int centimes10 = 10;
     static int nombreDeRendu = 0;
-    static int [] finalResults;
 
     public static void main(String[] args) {
-        int total = 20; // donné en centimes
+        int total = 30; // donné en centimes
         rendu1euro(total, 0);
-        System.out.println("\n\n\nNombre total rendus" + nombreDeRendu);
+        System.out.println("\n\n\nNombre total rendus: " + nombreDeRendu);
     }
 
-
-    /*public static int [][] rendu1euro(int [] renduPrecedent, int total) {
-        int i, j;
-        int n = 3;
-        int [][] rendu10cents = rendu10centimes();
-        int [][] results = new int[3*n][];
-        int [][] tmpResults;
-        int renduPrec = 0;
-        if (renduPrecedent != null) {
-            renduPrec = renduPrecedent.length;
-        }
-        int [][] clones = new int[n][renduPrec + n];
-
-        if (total <= 0) {
-            finalResults = renduPrecedent;
-            return results;
-        }
-
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < renduPrec; j++) {
-                clones[i][j] = renduPrecedent[j];
-            }
-            for (j = 0; j < n; j++) {
-                clones[i][renduPrec + j] = rendu10cents[i][j];
-            }
-
-            tmpResults = rendu1euro(renduPrecedent, total - 10);
-
-            for(j = 0; j < n; j++) {
-                results[3*i+j] = tmpResults[i];
-            }
-        }
-
-        return results;
-    }*/
+    public static void rendreNcentimes(int total, int step, int nbCentimes) {
+        System.out.print((step + 1) + ". Rendre " + nbCentimes + " centimes\t");
+        rendu1euro(total - nbCentimes, step + 1);
+    }
 
     public static void rendre2centimes(int total, int step) {
-        System.out.print(step + ". Rendre 2 centimes\t");
-        rendu1euro(total - 2, step + 1);
+        rendreNcentimes(total, step, 2);
     }
 
     public static void rendre5centimes(int total, int step) {
-        System.out.print(step + ". Rendre 5 centimes\t");
-        rendu1euro(total - 5, step + 1);
+        rendreNcentimes(total, step, 5);
     }
 
     public static void rendre10centimes(int total, int step) {
-        System.out.print(step + ". Rendre 10 centimes\t");
-        rendu1euro(total - 10, step + 1);
+        rendreNcentimes(total, step, 10);
     }
 
     public static void rendu1euro(int total, int step) {
         if (total < 0) {
-            System.out.println("Rendu impossible");
+            System.out.print("Rendu impossible");
             return ;
         }
 
@@ -80,8 +42,12 @@ public class Exercice0070 {
         if (total >= 10) {
             spaces(step);
             rendre10centimes(total, step);
+        }
+        if (total >= 5) {
             spaces(step);
             rendre5centimes(total, step);
+        }
+        if (total >= 2) {
             spaces(step);
             rendre2centimes(total, step);
         }

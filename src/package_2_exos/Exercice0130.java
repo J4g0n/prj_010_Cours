@@ -22,23 +22,30 @@ public class Exercice0130 {
         qteVendu = sc.nextInt();
 
         benefice = calculBenefice(codeProduit, prixDeVente, qteVendu);
-    }
 
-    public static boolean readChar(char [] charArray,char c) {
-
+        System.out.println("Le bénéfice réalisé est de: " + benefice);
     }
 
     public static double calculBenefice(String codeProduit, double prixDeVente, int qteVendu) {
         double marge = 0;
-        if (codeProduit.startsWith("A")) {
-            if (codeProduit.startsWith("AE")) {
-                if (codeProduit.startsWith("AEP")) {
-
-                } else {
-
-                }
+        if (codeProduit.startsWith("AE")) {
+            if (codeProduit.startsWith("AEP")) {
+                marge = 5;
+            } else {
+                marge = 8;
             }
-            
+        } else if (codeProduit.startsWith("AR") || codeProduit.startsWith("AT")) {
+            marge = 8;
+        } else if (codeProduit.startsWith("B")) {
+            if (codeProduit.startsWith("BZ")) {
+                marge = 10;
+            } else {
+                marge = 7;
+            }
+        } else {
+            marge = 6;
         }
+
+        return ((double)qteVendu * prixDeVente) * (marge / 100);
     }
 }

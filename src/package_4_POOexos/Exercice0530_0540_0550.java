@@ -3,20 +3,20 @@ package package_4_POOexos;
 /**
  * Created by ipi on 30/01/2015.
  */
-public class CompteBancaire {
+public class Exercice0530_0540_0550 {
     private String numeroCompte;
     private String dateCreation;
     private String typeCompte;
     private double tauxRemuneration = -1;
 
 
-    public CompteBancaire(String numeroCompte, String dateCreation, String typeCompte) {
+    public Exercice0530_0540_0550(String numeroCompte, String dateCreation, String typeCompte) {
         this.numeroCompte = numeroCompte;
         this.dateCreation = dateCreation;
         this.typeCompte = typeCompte;
     }
 
-    public CompteBancaire(String numeroCompte, String dateCreation, String typeCompte, double tauxRemuneration) {
+    public Exercice0530_0540_0550(String numeroCompte, String dateCreation, String typeCompte, double tauxRemuneration) {
         this.numeroCompte = numeroCompte;
         this.dateCreation = dateCreation;
         this.typeCompte = typeCompte;

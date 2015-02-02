@@ -3,7 +3,7 @@ package package_4_POOexos;
 /**
  * Created by ipi on 30/01/2015.
  */
-public class Calculatrice {
+public class Exercice0520 {
     public static double addition(double x, double y) {
         return x + y;
     }

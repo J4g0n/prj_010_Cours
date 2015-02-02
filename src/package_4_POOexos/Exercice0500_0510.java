@@ -3,12 +3,12 @@ package package_4_POOexos;
 /**
  * Created by ipi on 30/01/2015.
  */
-public class Point {
+public class Exercice0500_0510 {
     private String nom;
     private int abscisse;
     private int ordonnee;
 
-    public Point(String nom, int abscisse, int ordonnee) {
+    public Exercice0500_0510(String nom, int abscisse, int ordonnee) {
         super();
         this.setNom(nom);
         this.setAbscisse(abscisse);

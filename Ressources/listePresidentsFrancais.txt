@@ -1,0 +1,4 @@
+Mitterand;Francois
+Chirac;Jacques
+Sarkozy;Nicolas
+Hollande;Francois

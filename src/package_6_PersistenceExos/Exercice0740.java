@@ -17,9 +17,10 @@ public class Exercice0740 {
             Statement statement = conDBChanteurs.createStatement();
             ResultSet lesLignesRecuperees =  statement.executeQuery(reqTousLesChanteurs);
             while (lesLignesRecuperees.next()) {
-                System.out.println("Chanteur nom: " + lesLignesRecuperees.getString(1));
-                System.out.println("Chanteur prenom: " + lesLignesRecuperees.getString(2));
-                System.out.println("Chanteur annee: " + lesLignesRecuperees.getInt(3) + "\n");
+                System.out.println("Tennisman id: " + lesLignesRecuperees.getInt(1));
+                System.out.println("Tennisman nom: " + lesLignesRecuperees.getString(2));
+                System.out.println("Tennisman prenom: " + lesLignesRecuperees.getString(3));
+                System.out.println("Tennisman annee: " + lesLignesRecuperees.getInt(4) + "\n");
             }
             System.out.println("OK");
         } catch (Exception e) {

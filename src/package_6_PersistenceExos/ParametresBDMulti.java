@@ -1,6 +1,12 @@
-package package_5_Persistence;
+package package_6_PersistenceExos;
 
-import java.sql.*;
+import package_5_Persistence.EtatSQL;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /*	=============================================
  * 	Classe parametrage acc�s � une BD relationnelle
  * 	=============================================
@@ -8,7 +14,7 @@ import java.sql.*;
  * 	Date		:	Avril 2006
  * 	=============================================
  */
-public class ParametresBD {
+public class ParametresBDMulti {
 	//	propri�t�	:	type SGBDR : Mysql, MS SQL Server, Oracle,..
 	// changer ci-dessous l�attribut SGBDR en valeur MY ou MS ou OR pour sp�cialiser
 	// l�acc�s � MySQL ou � Microsoft SQL Server ou � Oracle 
@@ -35,7 +41,7 @@ public class ParametresBD {
 	 */
 	// 		constante 	:	nom de la source de donn�es
 	private static final String urlMS =
-			"jdbc:sqlserver://S23POSTE19;database=bdChanteursSS";
+			"jdbc:sqlserver://S23POSTE19\\;database=bd_chanteurs";
 	//		constante	:	login
 	private static final String userMS = "sa";
 	//		constante	:	mot de passe
@@ -63,6 +69,7 @@ public class ParametresBD {
 	 *  	getteurs (pas de setteurs ici)
 	 *  	==============================
 	 */
+
 	public static String getSGBDR() {
 		return SGBDR;
 	}

@@ -7,9 +7,9 @@ import java.sql.SQLException;
 /**
  * Created by ipi on 03/02/2015.
  */
-public class LireDonneesParParametreBD {
+public class LireDonneesDansSQLServer2012 {
     public static void main (String [] args) {
-        // Pour utiliser la bd sous mysql modifier l'attribut SGDR="MY" dans la classe parametreBD
+        // Pour utiliser la bd sous SQLServer modifier l'attribut SGDR="MS" dans la classe parametreBD
         // puis vérifier nom serveur et nom bd
         // on utilise une classe ParametreBd pour faciliter l'accès à la base de donnee
         String reqTousLesChanteurs = "SELECT * FROM chanteurs";
@@ -31,7 +31,7 @@ public class LireDonneesParParametreBD {
         }
 
         // Ajouter un chanteur dans la BD
-        String nomSaisi = "Obispo";
+        /*String nomSaisi = "Obispo";
         String prenomSaisi = "Pascal";
         int annee = 1345;
         String resAjoutChanteur =
@@ -42,6 +42,6 @@ public class LireDonneesParParametreBD {
             System.out.println(etat.getCodeEtat() + " - " + etat.getLibelleEtat());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

@@ -18,7 +18,11 @@ public class AA_TestFenetres {
         f2.setVisible(true);*/
 
         // test parametre IHM
-        Win_080_UtiliseParametre_IHM f2 = new Win_080_UtiliseParametre_IHM();
+        /*Win_080_UtiliseParametre_IHM f2 = new Win_080_UtiliseParametre_IHM();
+        f2.setVisible(true);*/
+
+        // Test menu bar
+        Win_090_AvecMenus f2 = new Win_090_AvecMenus();
         f2.setVisible(true);
     }
 }

@@ -2,18 +2,21 @@ package package_7_SWING;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Created by ipi on 05/02/2015.
  */
-public class Win_070_ListenerInterne_clic extends JFrame {
+public class Win_080_UtiliseParametre_IHM extends JFrame {
     JLabel lblNom; // Texte non modifiable
     JButton btnQuitter; // Bouton à cliquer
     JPanel panneauPrincipal; // Panneau ou panel
     // constructeur
 
-    public Win_070_ListenerInterne_clic() throws HeadlessException {
+    public Win_080_UtiliseParametre_IHM() throws HeadlessException {
         super();
         // on fabrique les composants
         panneauPrincipal = new JPanel();
@@ -54,7 +57,8 @@ public class Win_070_ListenerInterne_clic extends JFrame {
         this.setContentPane(panneauPrincipal);
         // régler les propriétés de la fenetre
         // modifiables par le développeur
-        this.setTitle("Ma première fanete SWING");
+        this.setTitle(Parametre_IHM.getTitreAppli() + ": Connexion");
+        this.setBackground(Parametre_IHM.getCouleurFondFenetre());
         this.setSize(400, 200); // largeur, hauteur
         this.setResizable(true); // redimensionnable ou pas
         this.setLocationRelativeTo(null); // positionnement par rapport à une autre fenetre

@@ -14,7 +14,11 @@ public class AA_TestFenetres {
         f2.setVisible(true);*/
 
         // Réagir à une clic
-        Win_070_ListenerInterne_clic f2 = new Win_070_ListenerInterne_clic();
+        /*Win_070_ListenerInterne_clic f2 = new Win_070_ListenerInterne_clic();
+        f2.setVisible(true);*/
+
+        // test parametre IHM
+        Win_080_UtiliseParametre_IHM f2 = new Win_080_UtiliseParametre_IHM();
         f2.setVisible(true);
     }
 }

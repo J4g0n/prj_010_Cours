@@ -2,6 +2,8 @@ package package_7_SWING;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class Win_090_AvecMenus extends JFrame {
@@ -21,6 +23,7 @@ public class Win_090_AvecMenus extends JFrame {
 
     public Win_090_AvecMenus() throws HeadlessException {
         super();
+        JPanel panneauPrincipal; // Panneau ou panel
 
         menuBar = new JMenuBar();
 
@@ -33,6 +36,24 @@ public class Win_090_AvecMenus extends JFrame {
         menuFichierQuitter = new JMenuItem("Quitter");
         menuAccueilTableau = new JMenuItem("Tableau");
         menuInsertionImage = new JMenuItem("Insertion");
+
+        // ajout des actions au menu
+        menuFichierQuitter.addActionListener(new ActionListener() {
+            // Réagir au clic gauche sur le bouton
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Traitement à faire lors du clic gauche
+                int reponse = JOptionPane.showConfirmDialog(
+                        null,
+                        "Voulez-vous vraiment quitter?",
+                        "Quitter",
+                        JOptionPane.WARNING_MESSAGE);
+
+                if (reponse == JOptionPane.OK_OPTION) {
+                    System.exit(0);
+                }
+            }
+        });
 
         // attacher les options aux menus
         menuFichier.add(menuFichierEnregistrer);
@@ -50,6 +71,9 @@ public class Win_090_AvecMenus extends JFrame {
 
         // attacher la barre de menu à la fenetre
         this.setJMenuBar(menuBar);
+        // creer panneau
+        panneauPrincipal = new JPanel();
+        panneauPrincipal.setBackground(Color.BLACK);
 
         this.setSize(400, 200); // largeur, hauteur
         this.setResizable(true); // redimensionnable ou pas

@@ -60,6 +60,7 @@ public class Win_0930_10 extends JFrame {
                 System.out.println("Selected Item  = " + selected);
 
                 Set<String> villes = selectionnerVilles(selected);
+                listeVille.removeAllItems();
                 for (String ville: villes) {
                     listeVille.addItem(ville);
                 }
